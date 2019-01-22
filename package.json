@@ -1,0 +1,33 @@
+{
+  "name": "fpjs-spa",
+  "version": "1.0.0",
+  "description": "SPA version of FPJS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wshito/fpjs-spa.git",
+    "web": "https://github.com/wshito/fpjs-spa"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/*.js"
+  },
+  "author": "wshito",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "hyperscript": "^2.0.2",
+    "hyperscript-helpers": "^3.0.3",
+    "ramda": "^0.26.1",
+    "style-loader": "^0.23.1",
+    "tachyons": "^4.11.1",
+    "virtual-dom": "^2.1.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
