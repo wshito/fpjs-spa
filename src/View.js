@@ -6,25 +6,29 @@ import * as R from 'ramda';
 import {} from './Update'; // locationChangeMsg
 import { PAGES } from './Model';
 
-const { div, header, nav, ul, li, section } = hh(h);
+const { div, header, nav, ul, li, section, a } = hh(h);
 
-const navItem = (dispatch, currentPage, navPage) =>
-  currentPage === navPage ?
-  li({ className: 'dib ml3 pb2 bb bw2 b--light-blue' }, navPage.navLabel) : // border-bottom for current page navigation menu
-  li({ className: 'dib ml3 pb2' }, navPage.navLabel); // display: inline-block
+const navItem = (dispatch, currentPageKey, navPage) => {
+  const { hash, navLabel } = navPage.info;
+  // display: inline-block
+  const className = 'dib ml4 pb2 hover-bg-light-blue' +
+    (currentPageKey === navPage.key ? ' bb bw2 b--light-blue' : ''); // border-bottom for current page navigation menu
+  return li({ className },
+    a({ className: 'link black', href: hash }, navLabel)); // display: inline-block
+}
 
 const navigationBar = (dispatch, model) => header({ className: '' }, [
-  nav({ className: 'page-nav mt4 mb3 f4 cf' },
+  nav({ className: 'page-nav mt4 mb3 f5 cf' },
     [
       ul({ className: 'fr li mv0' }, // float-right
-        Object.values(PAGES).map(eachPage => navItem(dispatch, model.page, eachPage))) // navigation menu
+        Object.values(PAGES).map(eachPage => navItem(dispatch, model.page.key, eachPage))) // navigation menu
     ]
   ),
 ]);
 
 const pageView = (dispatch, model) => section({ className: 'cf' }, // clear float
   [
-    model.page.view(dispatch, model[model.page])
+    model.page.info.view(dispatch, model[model.page.key])
   ]
 );
 

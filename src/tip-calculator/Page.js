@@ -5,8 +5,8 @@ import update from './Update';
 import view from './View';
 
 const page = {
-  navLabel: 'Calorie Counter',
-  hash: '#calorie',
+  navLabel: 'Tip Calculator',
+  hash: '#tipcalc',
   initModel,
   update,
   view
