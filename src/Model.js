@@ -1,18 +1,15 @@
-"use  strict";
+'use strict';
 
-const meal = {
-  id: 1, // unique key
-  description: 'Breakfast',
-  calories: 460
+import caloriePage from './calorie-counter/Page';
+
+export const PAGES = {
+  CALORIE_PAGE: caloriePage,
+  // TIP_CALC_PAGE: Symbol(),
 };
-const initModel = {
-  description: 'Breakfast',
-  calories: 460,
-  showForm: false, // toggled by 'Add' button
-  editId: null,
-  nextId: 0, // to add new record
-  meals: [],
 
-}
+const initModel = {
+  page: PAGES.CALORIE_PAGE,
+  [PAGES.CALORIE_PAGE]: caloriePage.initModel,
+};
 
 export default initModel;
