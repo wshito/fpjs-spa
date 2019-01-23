@@ -3,7 +3,6 @@
 import hh from 'hyperscript-helpers';
 import { h } from 'virtual-dom';
 import * as R from 'ramda';
-import {} from './Update'; // locationChangeMsg
 import { PAGES } from './Model';
 
 const { div, header, nav, ul, li, section, a } = hh(h);
