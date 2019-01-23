@@ -11,10 +11,10 @@ const { div, header, nav, ul, li, section, a } = hh(h);
 const navItem = (dispatch, currentPageKey, navPage) => {
   const { hash, navLabel } = navPage.info;
   // display: inline-block
-  const className = 'dib ml4 pb2 hover-bg-light-blue' +
+  const className = 'dib ml4 pb2 hover-bg-light-blue' + // display: inline-block
     (currentPageKey === navPage.key ? ' bb bw2 b--light-blue' : ''); // border-bottom for current page navigation menu
   return li({ className },
-    a({ className: 'link black', href: hash }, navLabel)); // display: inline-block
+    a({ className: 'link black', href: hash }, navLabel));
 }
 
 const navigationBar = (dispatch, model) => header({ className: '' }, [
