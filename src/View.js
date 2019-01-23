@@ -10,7 +10,7 @@ const { div, header, nav, ul, li, section } = hh(h);
 
 const navItem = (dispatch, currentPage, navPage) =>
   currentPage === navPage ?
-  li({ className: 'dib ml3 bb pb2' }, navPage.navLabel) : // border-bottom for current page navigation menu
+  li({ className: 'dib ml3 pb2 bb bw2 b--light-blue' }, navPage.navLabel) : // border-bottom for current page navigation menu
   li({ className: 'dib ml3 pb2' }, navPage.navLabel); // display: inline-block
 
 const navigationBar = (dispatch, model) => header({ className: '' }, [
