@@ -30,6 +30,14 @@ const pageUpdate = (msg, model) => {
   }
 };
 
+/**
+ * Dispatches the given message with `updateDispatcher` first.
+ * If there is no corresponding disptachment with `updateDispatcher`
+ * `pageUpdate` is called next.
+ * 
+ * @param {*} msg 
+ * @param {*} model 
+ */
 const update = (msg, model) => (R.defaultTo(pageUpdate)(updateDispatcher[msg.type]))(msg, model);
 
 export default update;

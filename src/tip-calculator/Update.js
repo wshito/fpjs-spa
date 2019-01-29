@@ -54,6 +54,13 @@ const updateDispatcher = {
     isValidTipPercent(msg.tipPercent) ? calculateTotal({ ...model, tipPercent: msg.tipPercent }) : model,
 };
 
-const Update = (msg, model) => updateDispatcher[msg.type](msg, model);
+/**
+ * Returns updated `model`.  When the message is invalid this returns
+ * the `model` untouched.
+ * 
+ * @param {*} msg 
+ * @param {*} model 
+ */
+const Update = (msg, model) => R.defaultTo((msg, model) => model)(updateDispatcher[msg.type])(msg, model);
 
 export default Update;
