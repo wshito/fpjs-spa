@@ -3,7 +3,7 @@ module.exports = {
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: 'development', // ローカル開発用環境に設定
   devServer: {
-    contentBase: 'dist', // ルートフォルダの設定
+    static: 'dist', // ルートフォルダの設定
     open: true // 実行時にブラウザが自動的に localhost を開く
   },
 
@@ -19,7 +19,8 @@ module.exports = {
           }
         ]
       },
-      { /* to load fonts */
+      {
+        /* to load fonts */
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
           loader: 'file-loader',
